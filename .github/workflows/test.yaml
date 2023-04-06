@@ -1,0 +1,24 @@
+name: Test
+on:
+  workflow_dispatch:
+  push:
+  
+jobs:
+  build-and-run:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.20.2
+
+      - name: Build
+        run: go build main.go
+
+      - name: Test repository secrets
+        run: ./main
+        env:
+          GHAS_ACCEPTANCE_TEST_ONE: ${{ secrets.GHAS_ACCEPTANCE_TEST_ONE }}
