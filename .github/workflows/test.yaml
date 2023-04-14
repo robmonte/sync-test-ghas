@@ -21,6 +21,6 @@ jobs:
         run: ./main
         env:
           TYPE: ${{ secrets.TYPE }}
-          sinkerAWSSM_Test_Key_1_Bad_Symbols________: ${{ secrets.sinkerAWSSM_Test_Key_1_Bad_Symbols________ }}
-          sinkerGHAS-Test-Secret-2: ${{ secrets.sinkerGHAS-Test-Secret-2 }}
-          StoreGHAS-Test-Update-Key-1: ${{ secrets.StoreGHAS-Test-Update-Key-1 }}
+          STOREGHAS_TEST_LOAD_KEY_1_BAD_SYMBOLS________: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_1_BAD_SYMBOLS________ }}
+          STOREGHAS_TEST_LOAD_KEY_2: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_2 }}
+          STOREGHAS_TEST_UPDATE_KEY_1: ${{ secrets.STOREGHAS_TEST_UPDATE_KEY_1 }}

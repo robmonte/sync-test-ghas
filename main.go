@@ -22,7 +22,7 @@ func main() {
 }
 
 func loadTypeTestCheck() {
-	envVar1 := "sinkerAWSSM_Test_Key_1_Bad_Symbols________"
+	envVar1 := "STOREGHAS_TEST_LOAD_KEY_1_BAD_SYMBOLS________"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
@@ -34,7 +34,7 @@ func loadTypeTestCheck() {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
 	}
 
-	envVar2 := "sinkerGHAS-Test-Secret-2"
+	envVar2 := "STOREGHAS_TEST_LOAD_KEY_2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar2)
@@ -48,7 +48,7 @@ func loadTypeTestCheck() {
 }
 
 func updateTypeTestCheck() {
-	envVar1 := "StoreGHAS-Test-Update-Key-1"
+	envVar1 := "STOREGHAS_TEST_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
