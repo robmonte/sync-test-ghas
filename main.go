@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	testType, exists := os.LookupEnv("TYPE2")
+	testType, exists := os.LookupEnv("TYPE")
 	if !exists {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
 	}
