@@ -1,4 +1,4 @@
-name: Test
+name: Test-Acceptance
 on:
   workflow_dispatch:
   push:
