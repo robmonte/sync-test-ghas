@@ -12,6 +12,8 @@ func main() {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
 	}
 
+	fmt.Printf("Running %q test type", testType)
+
 	switch testType {
 	case "LOAD":
 		loadTypeTestCheck()
