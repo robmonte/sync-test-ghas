@@ -30,7 +30,7 @@ func loadTypeTestCheck() {
 		log.Fatalf("Failed to find %q value\n", envVar1)
 	}
 
-	if secret != "I am secret one!123" {
+	if secret != "I am secret one!" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
