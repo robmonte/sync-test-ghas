@@ -12,7 +12,7 @@ func main() {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
 	}
 
-	fmt.Printf("Running %q test type", testType)
+	fmt.Printf("Running %q test type\n", testType)
 
 	switch testType {
 	case "LOAD":
@@ -30,7 +30,7 @@ func loadTypeTestCheck() {
 		log.Fatalf("Failed to find %q value\n", envVar1)
 	}
 
-	if secret != "I am secret one!" {
+	if secret != "I am secret one!123" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
