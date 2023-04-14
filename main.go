@@ -7,6 +7,21 @@ import (
 )
 
 func main() {
+	testType, exists := os.LookupEnv("TYPE")
+	if !exists {
+		log.Fatalf("missing required \"TYPE\" field to determine test type")
+	}
+
+	switch testType {
+	case "LOAD":
+		loadTypeTestCheck()
+
+	case "UPDATE":
+		updateTypeTestCheck()
+	}
+}
+
+func loadTypeTestCheck() {
 	envVar1 := "sinkerAWSSM_Test_Key_1_Bad_Symbols________"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
@@ -14,20 +29,34 @@ func main() {
 	}
 
 	if secret != "I am secret one!" {
-		log.Fatalf("Received %q value but did not match expected value\n", envVar1)
+		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
-		fmt.Printf("The value of %q matched the expected value! Yay!\n", envVar1)
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
 	}
 
 	envVar2 := "sinkerGHAS-Test-Secret-2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
-		log.Fatalf("Failed to find %q value\n", envVar2)
+		log.Fatalf("failed to find %q value\n", envVar2)
 	}
 
-	if secret != "I am secret one!" {
-		log.Fatalf("Received %q value but did not match expected value\n", envVar2)
+	if secret != "I am secret two!" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
-		fmt.Printf("The value of %q matched the expected value! Yay!\n", envVar2)
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
+	}
+}
+
+func updateTypeTestCheck() {
+	envVar1 := "StoreGHAS-Test-Update-Key-1"
+	secret, found := os.LookupEnv(envVar1)
+	if !found || secret == "" {
+		log.Fatalf("Failed to find %q value\n", envVar1)
+	}
+
+	if secret != "StoreGHAS-Test-Update-Value-1-Changed" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar1)
+	} else {
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
 	}
 }

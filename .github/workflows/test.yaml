@@ -5,7 +5,6 @@ on:
   
 jobs:
   build-and-run:
-    environment: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,4 +20,7 @@ jobs:
       - name: Test repository secrets
         run: ./main
         env:
-          GHAS_ACCEPTANCE_TEST_ONE: ${{ secrets.GHAS_ACCEPTANCE_TEST_ONE }}
+          TYPE: ${{ secrets.TYPE }}
+          sinkerAWSSM_Test_Key_1_Bad_Symbols________: ${{ secrets.sinkerAWSSM_Test_Key_1_Bad_Symbols________ }}
+          sinkerGHAS-Test-Secret-2: ${{ secrets.sinkerGHAS-Test-Secret-2 }}
+          StoreGHAS-Test-Update-Key-1: ${{ secrets.StoreGHAS-Test-Update-Key-1 }}
