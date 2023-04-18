@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/base64"
 	"fmt"
 	"log"
 	"os"
@@ -14,7 +13,10 @@ func main() {
 	}
 
 	fmt.Printf("Running %q test type\n", testType)
-	fmt.Println(base64.StdEncoding.EncodeToString([]byte(testType)))
+	for i := 0; i < len(testType); i++ {
+		fmt.Printf("%v ", testType[i])
+	}
+	fmt.Println()
 
 	switch testType {
 	case "LOAD":
