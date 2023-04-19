@@ -15,10 +15,10 @@ func main() {
 	fmt.Printf("Running %q test type\n", testType)
 
 	switch testType {
-	case "LOAD":
+	case "LOAD_TEST":
 		loadTypeTestCheck()
 
-	case "UPDATE":
+	case "UPDATE_TEST":
 		updateTypeTestCheck()
 
 	default:
