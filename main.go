@@ -20,6 +20,9 @@ func main() {
 
 	case "UPDATE":
 		updateTypeTestCheck()
+
+	default:
+		log.Fatalf("received unsupported test type")
 	}
 }
 
