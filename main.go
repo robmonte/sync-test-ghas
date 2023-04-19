@@ -74,7 +74,7 @@ func loadTypeTestCheck() {
 	}
 	fmt.Println()
 
-	if secret != "{0:\"my\",1:\"map\",2:\"value\"}" {
+	if secret != "{\"0\":\"my\",\"1\":\"map\",\"2\":\"value\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar4)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
