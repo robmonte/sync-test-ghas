@@ -95,7 +95,7 @@ func updateTypeTestCheck() {
 		log.Fatalf("Failed to find %q value\n", envVar2)
 	}
 
-	if secret != "{0:\"StoreGHAS-Test-Update-Value-2-Changed\"}" {
+	if secret != "{\"0\":\"StoreGHAS-Test-Update-Value-2-Changed\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
