@@ -12,6 +12,11 @@ func main() {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
 	}
 
+	for i := 0; i < len(testType); i++ {
+		fmt.Printf("%v ", testType[i])
+	}
+	fmt.Println()
+
 	fmt.Printf("Running %q test type\n", testType)
 
 	switch testType {
