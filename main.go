@@ -13,10 +13,6 @@ func main() {
 	}
 
 	fmt.Printf("Running %q test type\n", testType)
-	for i := 0; i < len(testType); i++ {
-		fmt.Printf("%v ", testType[i])
-	}
-	fmt.Println()
 
 	switch testType {
 	case "LOAD":
