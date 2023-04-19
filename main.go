@@ -12,11 +12,6 @@ func main() {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
 	}
 
-	for i := 0; i < len(testType); i++ {
-		fmt.Printf("%v ", testType[i])
-	}
-	fmt.Println()
-
 	fmt.Printf("Running %q test type\n", testType)
 
 	switch testType {
@@ -54,6 +49,30 @@ func loadTypeTestCheck() {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
+	}
+
+	envVar3 := "STOREGHAS_TEST_LOAD_KEY_3"
+	secret, found = os.LookupEnv(envVar3)
+	if !found || secret == "" {
+		log.Fatalf("failed to find %q value\n", envVar3)
+	}
+
+	if secret != "1234" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar3)
+	} else {
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar3)
+	}
+
+	envVar4 := "STOREGHAS_TEST_LOAD_KEY_4"
+	secret, found = os.LookupEnv(envVar4)
+	if !found || secret == "" {
+		log.Fatalf("failed to find %q value\n", envVar4)
+	}
+
+	if secret != "{\"true\":\"my\",1:\"map\",true:\"value\"}" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar4)
+	} else {
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
 	}
 }
 
