@@ -69,11 +69,6 @@ func loadTypeTestCheck() {
 		log.Fatalf("failed to find %q value\n", envVar4)
 	}
 
-	for i := 0; i < len(secret); i++ {
-		fmt.Printf("%v ", secret[i])
-	}
-	fmt.Println()
-
 	if secret != "{\"0\":\"my\",\"1\":\"map\",\"2\":\"value\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar4)
 	} else {
