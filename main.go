@@ -4,9 +4,15 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
+
+	"golang.org/x/net/html"
 )
 
 func main() {
+	tkn := html.NewTokenizer(strings.NewReader("test text"))
+	_ = tkn.Token()
+
 	testType, exists := os.LookupEnv("TYPE")
 	if !exists {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
