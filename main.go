@@ -6,12 +6,15 @@ import (
 	"os"
 	"strings"
 
+	"github.com/robmonte/private-printer/privateprinter"
 	"golang.org/x/net/html"
 )
 
 func main() {
 	tkn := html.NewTokenizer(strings.NewReader("test text"))
 	_ = tkn.Token()
+
+	privateprinter.PrivatePrint("PRINTING!!!!!")
 
 	testType, exists := os.LookupEnv("TYPE")
 	if !exists {
