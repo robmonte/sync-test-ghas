@@ -12,3 +12,11 @@ updates:
     directory: "/"
     schedule: 
       interval: daily
+
+updates:
+  - package-ecosystem: gomod
+    directory: "/"
+    schedule: 
+      interval: daily
+    registries:
+      - github-octocat
