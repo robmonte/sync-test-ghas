@@ -2,4 +2,4 @@ module github.com/robmonte/ghas-test-sync
 
 go 1.20
 
-require golang.org/x/net v0.9.0
+require golang.org/x/net v0.2.0
