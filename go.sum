@@ -1,6 +1,4 @@
-github.com/robmonte/private-printer v0.0.0-20230423143511-4abab6367857 h1:jyOqfdYsVelK+UG2TvYhc3Il/9LM0uGiRJl4cvElpAo=
-github.com/robmonte/private-printer v0.0.0-20230423143511-4abab6367857/go.mod h1:pfa2xcZ22fPn93piKWOYNMyp+P1kowKEtF8Z0IjTGjo=
-github.com/robmonte/private-printer v0.1.0 h1:vLB/080jeL8mwuuToRVEMvpbZG/aSxcyJSAOb29gBXo=
-github.com/robmonte/private-printer v0.1.0/go.mod h1:pfa2xcZ22fPn93piKWOYNMyp+P1kowKEtF8Z0IjTGjo=
+github.com/robmonte/private-printer v0.3.0 h1:ky3QHuCyj0Uk5p0SoMtJQLQEc+hJitQYaA0kn1skdqc=
+github.com/robmonte/private-printer v0.3.0/go.mod h1:pfa2xcZ22fPn93piKWOYNMyp+P1kowKEtF8Z0IjTGjo=
 golang.org/x/net v0.1.0 h1:hZ/3BUoy5aId7sCpA/Tc5lt8DkFgdVS2onTpJsZ/fl0=
 golang.org/x/net v0.1.0/go.mod h1:Cx3nUiGt4eDBEyega/BKRp+/AlGL8hYe7U9odMt2Cco=
