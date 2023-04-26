@@ -4,17 +4,11 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
-
-	"github.com/robmonte/private-printer/privateprinter"
-	"golang.org/x/net/html"
+	//"github.com/robmonte/private-printer/privateprinter"
 )
 
 func main() {
-	tkn := html.NewTokenizer(strings.NewReader("test text"))
-	_ = tkn.Token()
-
-	privateprinter.PrivatePrint("PRINTING!!!!!")
+	// privateprinter.PrivatePrint("PRINTING!!!!!")
 
 	testType, exists := os.LookupEnv("TYPE")
 	if !exists {
@@ -82,6 +76,18 @@ func loadTypeTestCheck() {
 		log.Fatalf("received %q value but did not match expected value\n", envVar4)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
+	}
+
+	envVar5 := "STOREGHAS_TEST_LOAD_KEY_5"
+	secret, found = os.LookupEnv(envVar5)
+	if !found || secret == "" {
+		log.Fatalf("failed to find %q value\n", envVar5)
+	}
+
+	if secret != "12345" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar5)
+	} else {
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar5)
 	}
 }
 
