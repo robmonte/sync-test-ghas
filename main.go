@@ -18,8 +18,11 @@ func main() {
 	fmt.Printf("Running %q test type\n", testType)
 
 	switch testType {
-	case "LOAD_TEST":
-		loadTypeTestCheck()
+	case "LOAD_TEST_TOKEN":
+		loadTypeTokenTestCheck()
+
+	case "LOAD_TEST_APP":
+		loadTypeAppTestCheck()
 
 	case "UPDATE_TEST":
 		updateTypeTestCheck()
@@ -29,7 +32,7 @@ func main() {
 	}
 }
 
-func loadTypeTestCheck() {
+func loadTypeTokenTestCheck() {
 	envVar1 := "STOREGHAS_TEST_LOAD_KEY_1_BAD_SYMBOLS________"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
@@ -77,9 +80,11 @@ func loadTypeTestCheck() {
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
 	}
+}
 
+func loadTypeAppTestCheck() {
 	envVar5 := "STOREGHAS_TEST_LOAD_KEY_5"
-	secret, found = os.LookupEnv(envVar5)
+	secret, found := os.LookupEnv(envVar5)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar5)
 	}
