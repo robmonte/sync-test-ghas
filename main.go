@@ -24,8 +24,8 @@ func main() {
 	case "LOAD_TEST_APP":
 		loadTypeAppTestCheck()
 
-	case "UPDATE_TEST":
-		updateTypeTestCheck()
+	case "UPDATE_TEST_TOKEN":
+		updateTypeTokenTestCheck()
 
 	default:
 		log.Fatalf("received unsupported test type")
@@ -96,7 +96,7 @@ func loadTypeAppTestCheck() {
 	}
 }
 
-func updateTypeTestCheck() {
+func updateTypeTokenTestCheck() {
 	envVar1 := "STOREGHAS_TEST_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
@@ -119,5 +119,19 @@ func updateTypeTestCheck() {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
 		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
+	}
+}
+
+func updateTypeAppTestCheck() {
+	envVar3 := "STOREGHAS_TEST_UPDATE_KEY_3"
+	secret, found := os.LookupEnv(envVar3)
+	if !found || secret == "" {
+		log.Fatalf("Failed to find %q value\n", envVar3)
+	}
+
+	if secret != "StoreGHAS-Test-Update-Value-3-Changed" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar3)
+	} else {
+		fmt.Printf("the value of %q matched the expected value! Yay!\n", envVar3)
 	}
 }
