@@ -27,6 +27,9 @@ func main() {
 	case "UPDATE_TEST_TOKEN":
 		updateTypeTokenTestCheck()
 
+	case "UPDATE_TEST_APP":
+		updateTypeAppTestCheck()
+
 	default:
 		log.Fatalf("received unsupported test type")
 	}
