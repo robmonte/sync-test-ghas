@@ -7,12 +7,6 @@ registries:
     username: x-access-token
     password: ${{ secrets.DEPENDABOT_ACCESS_TOKEN }}
 
-# updates:
-#   - package-ecosystem: gomod
-#     directory: "/"
-#     schedule: 
-#       interval: daily
-
 updates:
   - package-ecosystem: gomod
     directory: "/"
