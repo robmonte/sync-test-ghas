@@ -1,4 +1,4 @@
-name: Test-Acceptance
+name: GH-Test-Acceptance
 on:
   workflow_dispatch:
   
@@ -6,25 +6,25 @@ jobs:
   build-and-run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9 # v4.0.0
         with:
           go-version: 1.20.2
 
-      - name: Build
-        run: go build main.go
+      - name: Build gh validator
+        run: go build ./main.go
 
-      - name: Test repository secrets
+      - name: Run gh validator secrets checks
         run: ./main
         env:
           TYPE: ${{ secrets.TYPE }}
-          STOREGHAS_TEST_LOAD_KEY_1_BAD_SYMBOLS________: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_1_BAD_SYMBOLS________ }}
-          STOREGHAS_TEST_LOAD_KEY_2: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_2 }}
-          STOREGHAS_TEST_LOAD_KEY_3: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_3 }}
-          STOREGHAS_TEST_LOAD_KEY_4: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_4 }}
-          STOREGHAS_TEST_LOAD_KEY_5: ${{ secrets.STOREGHAS_TEST_LOAD_KEY_5 }}
-          STOREGHAS_TEST_UPDATE_KEY_1: ${{ secrets.STOREGHAS_TEST_UPDATE_KEY_1 }}
-          STOREGHAS_TEST_UPDATE_KEY_2: ${{ secrets.STOREGHAS_TEST_UPDATE_KEY_2 }}
-          STOREGHAS_TEST_UPDATE_KEY_3: ${{ secrets.STOREGHAS_TEST_UPDATE_KEY_3 }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________ }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_2: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_2 }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_3: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_3 }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_4: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_4 }}
+          STOREGHAS_TEST_APP_LOAD_KEY_1: ${{ secrets.STOREGHAS_TEST_APP_LOAD_KEY_1 }}
+          STOREGHAS_TEST_TOKEN_UPDATE_KEY_1: ${{ secrets.STOREGHAS_TEST_TOKEN_UPDATE_KEY_1 }}
+          STOREGHAS_TEST_TOKEN_UPDATE_KEY_2: ${{ secrets.STOREGHAS_TEST_TOKEN_UPDATE_KEY_2 }}
+          STOREGHAS_TEST_APP_UPDATE_KEY_3: ${{ secrets.STOREGHAS_TEST_APP_UPDATE_KEY_1 }}
