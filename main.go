@@ -33,7 +33,7 @@ func main() {
 
 func loadTypeTokenTestCheck() {
 	// Token Load Test 1
-	envVar1 := "STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________"
+	envVar1 := "STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
@@ -45,7 +45,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 2
-	envVar2 := "STOREGHAS_TEST_TOKEN_LOAD_KEY_2"
+	envVar2 := "STOREGH_TEST_TOKEN_LOAD_KEY_2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar2)
@@ -57,7 +57,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 3
-	envVar3 := "STOREGHAS_TEST_TOKEN_LOAD_KEY_3"
+	envVar3 := "STOREGH_TEST_TOKEN_LOAD_KEY_3"
 	secret, found = os.LookupEnv(envVar3)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar3)
@@ -69,7 +69,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 4
-	envVar4 := "STOREGHAS_TEST_TOKEN_LOAD_KEY_4"
+	envVar4 := "STOREGH_TEST_TOKEN_LOAD_KEY_4"
 	secret, found = os.LookupEnv(envVar4)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar4)
@@ -83,7 +83,7 @@ func loadTypeTokenTestCheck() {
 
 func loadTypeAppTestCheck() {
 	// App Load Tets 1
-	envVar5 := "STOREGHAS_TEST_APP_LOAD_KEY_1"
+	envVar5 := "STOREGH_TEST_APP_LOAD_KEY_1"
 	secret, found := os.LookupEnv(envVar5)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar5)
@@ -97,24 +97,24 @@ func loadTypeAppTestCheck() {
 
 func updateTypeTokenTestCheck() {
 	// Token Update Test 1
-	envVar1 := "STOREGHAS_TEST_TOKEN_UPDATE_KEY_1"
+	envVar1 := "STOREGH_TEST_TOKEN_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
 	}
-	if secret != "StoreGHAS-Test-Token-Update-Value-1-Changed" {
+	if secret != "StoreGH-Test-Token-Update-Value-1-Changed" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
 	}
 
 	// Token Update Test 2
-	envVar2 := "STOREGHAS_TEST_TOKEN_UPDATE_KEY_2"
+	envVar2 := "STOREGH_TEST_TOKEN_UPDATE_KEY_2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar2)
 	}
-	if secret != "{\"0\":\"StoreGHAS-Test-Token-Update-Value-2-Changed\"}" {
+	if secret != "{\"0\":\"StoreGH-Test-Token-Update-Value-2-Changed\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
@@ -123,12 +123,12 @@ func updateTypeTokenTestCheck() {
 
 func updateTypeAppTestCheck() {
 	// App Update Test 1
-	envVar3 := "STOREGHAS_TEST_APP_UPDATE_KEY_1"
+	envVar3 := "STOREGH_TEST_APP_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar3)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar3)
 	}
-	if secret != "StoreGHAS-Test-App-Update-Value-1-Changed" {
+	if secret != "StoreGH-Test-App-Update-Value-1-Changed" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar3)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar3)
