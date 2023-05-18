@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 )
@@ -114,6 +115,7 @@ func loadTypeTokenTestCheck() {
 func loadTypeAppTestCheck() {
 	// App Load Tets 1
 	envVar5 := "STOREGHAS_TEST_APP_LOAD_KEY_1" + uuid
+	fmt.Printf("%v\n", []byte(uuid))
 	secret, found := os.LookupEnv(envVar5)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar5)
