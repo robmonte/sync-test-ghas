@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 )
 
 var uuid string
@@ -19,6 +20,7 @@ func main() {
 	if !exists {
 		log.Fatalf("missing mirequired \"UUID\" field to find test values")
 	}
+	uuid = strings.ToUpper(uuid)
 
 	log.Printf("Running %q test type\n", testType)
 
