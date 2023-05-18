@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"os"
 )
@@ -77,6 +78,10 @@ func loadTypeTokenTestCheck() {
 	if secret != "{\"0\":\"my\",\"1\":\"map\",\"2\":\"value\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar4)
 	} else {
+		var val any
+		if err := json.Unmarshal([]byte(secret), &val); err != nil {
+			log.Fatalf("received %q value but it could not be unmarshalled into valid JSON", envVar4)
+		}
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
 	}
 }
