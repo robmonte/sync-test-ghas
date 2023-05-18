@@ -82,7 +82,25 @@ func loadTypeTokenTestCheck() {
 		if err := json.Unmarshal([]byte(secret), &val); err != nil {
 			log.Fatalf("received %q value but it could not be unmarshalled into valid JSON", envVar4)
 		}
+
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
+	}
+
+	// Token Load Test 5
+	envVar5 := "STOREGHAS_TEST_TOKEN_LOAD_KEY_5"
+	secret, found = os.LookupEnv(envVar5)
+	if !found || secret == "" {
+		log.Fatalf("failed to find %q value\n", envVar5)
+	}
+	if secret != "{\"number\":1,\"true\":false}" {
+		log.Fatalf("received %q value but did not match expected value\n", envVar5)
+	} else {
+		var val any
+		if err := json.Unmarshal([]byte(secret), &val); err != nil {
+			log.Fatalf("received %q value but it could not be unmarshalled into valid JSON", envVar5)
+		}
+
+		log.Printf("the value of %q matched the expected value! Yay!\n", envVar5)
 	}
 }
 
