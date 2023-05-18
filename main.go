@@ -6,10 +6,17 @@ import (
 	"os"
 )
 
+var uuid string
+
 func main() {
 	testType, exists := os.LookupEnv("TYPE")
 	if !exists {
 		log.Fatalf("missing required \"TYPE\" field to determine test type")
+	}
+
+	uuid, exists = os.LookupEnv("UUID")
+	if !exists {
+		log.Fatalf("missing mirequired \"UUID\" field to find test values")
 	}
 
 	log.Printf("Running %q test type\n", testType)
@@ -106,7 +113,7 @@ func loadTypeTokenTestCheck() {
 
 func loadTypeAppTestCheck() {
 	// App Load Tets 1
-	envVar5 := "STOREGHAS_TEST_APP_LOAD_KEY_1"
+	envVar5 := "STOREGHAS_TEST_APP_LOAD_KEY_1" + uuid
 	secret, found := os.LookupEnv(envVar5)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar5)

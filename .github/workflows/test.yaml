@@ -20,6 +20,7 @@ jobs:
         run: ./main
         env:
           TYPE: ${{ secrets.TYPE }}
+          UUID: ${{ secrets.UUID }}
           STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________ }}
           STOREGHAS_TEST_TOKEN_LOAD_KEY_2: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_2 }}
           STOREGHAS_TEST_TOKEN_LOAD_KEY_3: ${{ secrets.STOREGHAS_TEST_TOKEN_LOAD_KEY_3 }}
