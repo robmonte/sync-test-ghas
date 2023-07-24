@@ -19,14 +19,14 @@ jobs:
       - name: Run gh validator secrets checks
         run: ./main
         env:
-          TYPE: ${{ secrets.TYPE }}
-          UUID: ${{ secrets.UUID }}
-          STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_TOKEN_LOAD_KEY_2: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_2{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_TOKEN_LOAD_KEY_3: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_3{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_TOKEN_LOAD_KEY_4: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_4{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_TOKEN_LOAD_KEY_5: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_5{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_APP_LOAD_KEY_1: ${{ secrets[format('STOREGHAS_TEST_APP_LOAD_KEY_1{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_TOKEN_UPDATE_KEY_1: ${{ secrets[format('STOREGHAS_TEST_TOKEN_UPDATE_KEY_1{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_TOKEN_UPDATE_KEY_2: ${{ secrets[format('STOREGHAS_TEST_TOKEN_UPDATE_KEY_2{0}', secrets.UUID)] }}
-          STOREGHAS_TEST_APP_UPDATE_KEY_1: ${{ secrets[format('STOREGHAS_TEST_APP_UPDATE_KEY_1{0}', secrets.UUID)] }}
+          STOREGH_TEST_TYPE: ${{ secrets.STOREGH_TEST_TYPE }}
+          STOREGH_TEST_UUID: ${{ secrets.STOREGH_TEST_UUID }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_2: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_2{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_3: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_3{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_4: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_4{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_TOKEN_LOAD_KEY_5: ${{ secrets[format('STOREGHAS_TEST_TOKEN_LOAD_KEY_5{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_APP_LOAD_KEY_1: ${{ secrets[format('STOREGHAS_TEST_APP_LOAD_KEY_1{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_TOKEN_UPDATE_KEY_1: ${{ secrets[format('STOREGHAS_TEST_TOKEN_UPDATE_KEY_1{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_TOKEN_UPDATE_KEY_2: ${{ secrets[format('STOREGHAS_TEST_TOKEN_UPDATE_KEY_2{0}', secrets.STOREGH_TEST_UUID)] }}
+          STOREGHAS_TEST_APP_UPDATE_KEY_1: ${{ secrets[format('STOREGHAS_TEST_APP_UPDATE_KEY_1{0}', secrets.STOREGH_TEST_UUID)] }}
