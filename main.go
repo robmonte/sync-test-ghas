@@ -51,7 +51,7 @@ func loadTypeTokenTestCheck() {
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar2)
 	}
-	if secret != "I am secret two!" {
+	if secret != "I am secret two!-" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
