@@ -125,7 +125,7 @@ func updateTypeTokenTestCheck() {
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
 	}
-	if secret != "StoreGHAS-Test-Token-Update-Value-1-Changed" {
+	if secret != "value-1-updated" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
@@ -137,7 +137,7 @@ func updateTypeTokenTestCheck() {
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar2)
 	}
-	if secret != "{\"0\":\"StoreGHAS-Test-Token-Update-Value-2-Changed\"}" {
+	if secret != "{\"0\":\"value-2-updated\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
@@ -151,7 +151,7 @@ func updateTypeAppTestCheck() {
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar3)
 	}
-	if secret != "StoreGHAS-Test-App-Update-Value-1-Changed" {
+	if secret != "value-1-updated" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar3)
 	} else {
 		log.Printf("the value of %q matched the expected value! Yay!\n", envVar3)
