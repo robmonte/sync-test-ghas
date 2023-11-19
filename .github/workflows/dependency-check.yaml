@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v4
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
+        with:
+          external-repo-token: ${{ secrets.DEPENDABOT_ACCESS_TOKEN }}
       - name: Run go mod tidy
         run: |
           export GOPRIVATE=github.com/robmonte
