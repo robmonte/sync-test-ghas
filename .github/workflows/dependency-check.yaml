@@ -12,7 +12,3 @@ jobs:
         uses: actions/checkout@v4
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
-      - name: 'Update go.mod'
-        run: |
-          export GOPRIVATE=github.com/robmonte
-          go mod tidy
