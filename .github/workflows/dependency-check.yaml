@@ -17,4 +17,5 @@ jobs:
       - name: Run go mod tidy
         run: |
           export GOPRIVATE=github.com/robmonte
+          go env -w GOPRIVATE=github.com/robmonte
           go mod tidy
