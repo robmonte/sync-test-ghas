@@ -6,6 +6,6 @@ import (
 )
 
 func Print() {
-	privateprinter.PrivatePrint("dependabot test with access")
-	privateprinterrestricted.PrivatePrint("dependabot test without access")
+	privateprinter.PrivatePrint("dependabot test with access 1")
+	privateprinterrestricted.PrivatePrint("dependabot test without access 1")
 }
