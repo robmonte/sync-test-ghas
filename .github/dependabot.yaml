@@ -1,7 +1,7 @@
 version: 2
 
 registries:
-  github-registry:
+  github-octocat:
     type: git
     url: https://github.com
     username: x-access-token
