@@ -1,11 +1,12 @@
 version: 2
 
 registries:
-  github-octocat:
+  github-registry:
     type: git
     url: https://github.com
     username: x-access-token
     password: ${{ secrets.DEPENDABOT_ACCESS_TOKEN }}
+    key: ${{ secrets.DEPENDABOT_TOKEN }}
 
 updates:
   - package-ecosystem: gomod
