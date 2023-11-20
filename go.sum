@@ -1,6 +1,4 @@
-github.com/robmonte/private-printer v0.1.0 h1:vLB/080jeL8mwuuToRVEMvpbZG/aSxcyJSAOb29gBXo=
-github.com/robmonte/private-printer v0.1.0/go.mod h1:pfa2xcZ22fPn93piKWOYNMyp+P1kowKEtF8Z0IjTGjo=
-github.com/robmonte/private-printer v0.4.0 h1:lvWRj+neCT12qod17j39sOUpS1QnYEId/VDj9xlsEOU=
-github.com/robmonte/private-printer v0.4.0/go.mod h1:pfa2xcZ22fPn93piKWOYNMyp+P1kowKEtF8Z0IjTGjo=
+github.com/robmonte/private-printer v0.9.0 h1:9BJW2+BYg1MevvstvLn5kECin1VpUIo0cfKb7ow7zsQ=
+github.com/robmonte/private-printer v0.9.0/go.mod h1:pfa2xcZ22fPn93piKWOYNMyp+P1kowKEtF8Z0IjTGjo=
 github.com/robmonte/private-printer-restricted v0.2.0 h1:vOZLnXNDVdDxmBw11YD0OAtfnM9rNJXmCemnwY9R4Wc=
 github.com/robmonte/private-printer-restricted v0.2.0/go.mod h1:XYalIlbrX6inFz5UTsAxIyZDLfd/ySy6HPCJQVT+saY=
