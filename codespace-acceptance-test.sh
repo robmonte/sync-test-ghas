@@ -1,6 +1,14 @@
 #!/bin/bash
 
-if [[ "$STOREGH_TEST_TYPE" == "TEST_TOKEN_LOAD" ]]
+if [[ -z "$STOREGH_TEST_TYPE" ]]
+then
+	echo "missing required \"STOREGH_TEST_TYPE\" field to determine test type"
+	exit 1
+fi
+
+echo "running \"$STOREGH_TEST_TYPE\" test type"
+
+if [[ "$STOREGH_TEST_TYPE" == "LOAD_TEST_TOKEN" ]]
 then
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "I am secret one!" ]]
@@ -30,7 +38,7 @@ then
 	fi
 
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_4${STOREGH_TEST_UUID}"
-	if [[ "${!var}" != "I am secret one!" ]]
+	if [[ "${!var}" != "{\"0\":\"my\",\"1\":\"map\",\"2\":\"value\"}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
@@ -39,7 +47,7 @@ then
 	fi
 
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_5${STOREGH_TEST_UUID}"
-	if [[ "${!var}" != "I am secret one!" ]]
+	if [[ "${!var}" != "{\"number\":1,\"true\":false}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
@@ -48,10 +56,47 @@ then
 	fi
 fi
 
+if [[ "$STOREGH_TEST_TYPE" == "LOAD_TEST_APP" ]]
+then
+	var="STOREGH_TEST_APP_LOAD_KEY_1${STOREGH_TEST_UUID}"
+	if [[ "${!var}" != "12345" ]]
+	then
+		echo "received \"${var}\" value but did not match expected value"
+		exit 1
+	else
+		echo "the value of \"${var}\" matched the expected value!"
+	fi
+fi
 
+if [[ "$STOREGH_TEST_TYPE" == "UPDATE_TEST_TOKEN" ]]
+then
+	var="STOREGH_TEST_TOKEN_UPDATE_KEY_1${STOREGH_TEST_UUID}"
+	if [[ "${!var}" != "value-1-updated" ]]
+	then
+		echo "received \"${var}\" value but did not match expected value"
+		exit 1
+	else
+		echo "the value of \"${var}\" matched the expected value!"
+	fi
 
+	var="STOREGH_TEST_TOKEN_UPDATE_KEY_2${STOREGH_TEST_UUID}"
+	if [[ "${!var}" != "{\"0\":\"value-2-updated\"}" ]]
+	then
+		echo "received \"${var}\" value but did not match expected value"
+		exit 1
+	else
+		echo "the value of \"${var}\" matched the expected value!"
+	fi
+fi
 
-# STOREGH_TEST_APP_LOAD_KEY_1: ${{ secrets[format('STOREGH_TEST_APP_LOAD_KEY_1{0}', secrets.STOREGH_TEST_UUID)] }}
-# STOREGH_TEST_TOKEN_UPDATE_KEY_1: ${{ secrets[format('STOREGH_TEST_TOKEN_UPDATE_KEY_1{0}', secrets.STOREGH_TEST_UUID)] }}
-# STOREGH_TEST_TOKEN_UPDATE_KEY_2: ${{ secrets[format('STOREGH_TEST_TOKEN_UPDATE_KEY_2{0}', secrets.STOREGH_TEST_UUID)] }}
-# STOREGH_TEST_APP_UPDATE_KEY_1: ${{ secrets[format('STOREGH_TEST_APP_UPDATE_KEY_1{0}', secrets.STOREGH_TEST_UUID)] }}
+if [[ "$STOREGH_TEST_TYPE" == "UPDATE_TEST_APP" ]]
+then
+	var="STOREGH_TEST_APP_UPDATE_KEY_1${STOREGH_TEST_UUID}"
+	if [[ "${!var}" != "value-1-updated" ]]
+	then
+		echo "received \"${var}\" value but did not match expected value"
+		exit 1
+	else
+		echo "the value of \"${var}\" matched the expected value!"
+	fi
+fi

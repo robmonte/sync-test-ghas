@@ -9,10 +9,10 @@ import (
 func main() {
 	testType, exists := os.LookupEnv("STOREGH_TEST_TYPE")
 	if !exists {
-		log.Fatalf("missing required \"TYPE\" field to determine test type")
+		log.Fatalf("missing required \"STOREGH_TEST_TYPE\" field to determine test type")
 	}
 
-	log.Printf("Running %q test type\n", testType)
+	log.Printf("running %q test type\n", testType)
 
 	switch testType {
 	case "LOAD_TEST_TOKEN":
@@ -37,7 +37,7 @@ func loadTypeTokenTestCheck() {
 	envVar1 := "STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
-		log.Fatalf("Failed to find %q value\n", envVar1)
+		log.Fatalf("failed to find %q value\n", envVar1)
 	}
 	if secret != "I am secret one!" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
@@ -123,7 +123,7 @@ func updateTypeTokenTestCheck() {
 	envVar1 := "STOREGH_TEST_TOKEN_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
-		log.Fatalf("Failed to find %q value\n", envVar1)
+		log.Fatalf("failed to find %q value\n", envVar1)
 	}
 	if secret != "value-1-updated" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
@@ -135,7 +135,7 @@ func updateTypeTokenTestCheck() {
 	envVar2 := "STOREGH_TEST_TOKEN_UPDATE_KEY_2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
-		log.Fatalf("Failed to find %q value\n", envVar2)
+		log.Fatalf("failed to find %q value\n", envVar2)
 	}
 	if secret != "{\"0\":\"value-2-updated\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
@@ -149,7 +149,7 @@ func updateTypeAppTestCheck() {
 	envVar3 := "STOREGH_TEST_APP_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar3)
 	if !found || secret == "" {
-		log.Fatalf("Failed to find %q value\n", envVar3)
+		log.Fatalf("failed to find %q value\n", envVar3)
 	}
 	if secret != "value-1-updated" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar3)
