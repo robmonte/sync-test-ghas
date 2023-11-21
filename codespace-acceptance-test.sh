@@ -1,6 +1,12 @@
 #!/bin/bash
 
+echo "pulling latest repository changes"
 git pull
+if [[ $? != 0 ]]
+then
+	echo "failed to pull latest changes from repository"
+	exit 1
+fi
 
 if [[ -z "$STOREGH_TEST_TYPE" ]]
 then
