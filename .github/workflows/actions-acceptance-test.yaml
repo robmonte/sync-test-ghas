@@ -11,7 +11,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9 # v4.0.0
         with:
-          go-version: 1.20.2
+          go-version: 1.21.4
 
       - name: Build gh validator
         run: go build ./main.go
