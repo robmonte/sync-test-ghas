@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        required: true
+        required: false
         default: ""
         type: string
   
