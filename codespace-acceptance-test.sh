@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull
+
 if [[ -z "$STOREGH_TEST_TYPE" ]]
 then
 	echo "missing required \"STOREGH_TEST_TYPE\" field to determine test type"
