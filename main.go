@@ -42,7 +42,7 @@ func loadTypeTokenTestCheck() {
 	if secret != "I am secret one!" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
+		log.Printf("the value of %q matched the expected value!\n", envVar1)
 	}
 
 	// Token Load Test 2
@@ -54,7 +54,7 @@ func loadTypeTokenTestCheck() {
 	if secret != "I am secret two!" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
+		log.Printf("the value of %q matched the expected value!\n", envVar2)
 	}
 
 	// Token Load Test 3
@@ -66,7 +66,7 @@ func loadTypeTokenTestCheck() {
 	if secret != "1234" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar3)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar3)
+		log.Printf("the value of %q matched the expected value!\n", envVar3)
 	}
 
 	// Token Load Test 4
@@ -83,7 +83,7 @@ func loadTypeTokenTestCheck() {
 			log.Fatalf("received %q value but it could not be unmarshalled into valid JSON", envVar4)
 		}
 
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar4)
+		log.Printf("the value of %q matched the expected value!\n", envVar4)
 	}
 
 	// Token Load Test 5
@@ -100,7 +100,7 @@ func loadTypeTokenTestCheck() {
 			log.Fatalf("received %q value but it could not be unmarshalled into valid JSON", envVar5)
 		}
 
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar5)
+		log.Printf("the value of %q matched the expected value!\n", envVar5)
 	}
 }
 
@@ -114,7 +114,7 @@ func loadTypeAppTestCheck() {
 	if secret != "12345" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar5)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar5)
+		log.Printf("the value of %q matched the expected value!\n", envVar5)
 	}
 }
 
@@ -128,7 +128,7 @@ func updateTypeTokenTestCheck() {
 	if secret != "value-1-updated" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar1)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar1)
+		log.Printf("the value of %q matched the expected value!\n", envVar1)
 	}
 
 	// Token Update Test 2
@@ -140,7 +140,7 @@ func updateTypeTokenTestCheck() {
 	if secret != "{\"0\":\"value-2-updated\"}" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar2)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar2)
+		log.Printf("the value of %q matched the expected value!\n", envVar2)
 	}
 }
 
@@ -154,6 +154,6 @@ func updateTypeAppTestCheck() {
 	if secret != "value-1-updated" {
 		log.Fatalf("received %q value but did not match expected value\n", envVar3)
 	} else {
-		log.Printf("the value of %q matched the expected value! Yay!\n", envVar3)
+		log.Printf("the value of %q matched the expected value!\n", envVar3)
 	}
 }
