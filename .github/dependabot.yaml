@@ -1,7 +1,7 @@
 version: 2
 
 registries:
-  github-octocat:
+  github-reg:
     type: git
     url: https://github.com
     username: x-access-token
@@ -13,4 +13,4 @@ updates:
     schedule: 
       interval: daily
     registries:
-      - github-octocat
+      - github-reg
