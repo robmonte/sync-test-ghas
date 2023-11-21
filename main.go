@@ -34,7 +34,7 @@ func main() {
 
 func loadTypeTokenTestCheck() {
 	// Token Load Test 1
-	envVar1 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________"
+	envVar1 := "STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
@@ -46,7 +46,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 2
-	envVar2 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_LOAD_KEY_2"
+	envVar2 := "STOREGH_TEST_TOKEN_LOAD_KEY_2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar2)
@@ -58,7 +58,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 3
-	envVar3 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_LOAD_KEY_3"
+	envVar3 := "STOREGH_TEST_TOKEN_LOAD_KEY_3"
 	secret, found = os.LookupEnv(envVar3)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar3)
@@ -70,7 +70,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 4
-	envVar4 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_LOAD_KEY_4"
+	envVar4 := "STOREGH_TEST_TOKEN_LOAD_KEY_4"
 	secret, found = os.LookupEnv(envVar4)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar4)
@@ -87,7 +87,7 @@ func loadTypeTokenTestCheck() {
 	}
 
 	// Token Load Test 5
-	envVar5 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_LOAD_KEY_5"
+	envVar5 := "STOREGH_TEST_TOKEN_LOAD_KEY_5"
 	secret, found = os.LookupEnv(envVar5)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar5)
@@ -106,7 +106,7 @@ func loadTypeTokenTestCheck() {
 
 func loadTypeAppTestCheck() {
 	// App Load Tets 1
-	envVar5 := "STOREGH_REPOSITORY_ACTIONS_TEST_APP_LOAD_KEY_1"
+	envVar5 := "STOREGH_TEST_APP_LOAD_KEY_1"
 	secret, found := os.LookupEnv(envVar5)
 	if !found || secret == "" {
 		log.Fatalf("failed to find %q value\n", envVar5)
@@ -120,7 +120,7 @@ func loadTypeAppTestCheck() {
 
 func updateTypeTokenTestCheck() {
 	// Token Update Test 1
-	envVar1 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_UPDATE_KEY_1"
+	envVar1 := "STOREGH_TEST_TOKEN_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar1)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar1)
@@ -132,7 +132,7 @@ func updateTypeTokenTestCheck() {
 	}
 
 	// Token Update Test 2
-	envVar2 := "STOREGH_REPOSITORY_ACTIONS_TEST_TOKEN_UPDATE_KEY_2"
+	envVar2 := "STOREGH_TEST_TOKEN_UPDATE_KEY_2"
 	secret, found = os.LookupEnv(envVar2)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar2)
@@ -146,7 +146,7 @@ func updateTypeTokenTestCheck() {
 
 func updateTypeAppTestCheck() {
 	// App Update Test 1
-	envVar3 := "STOREGH_REPOSITORY_ACTIONS_TEST_APP_UPDATE_KEY_1"
+	envVar3 := "STOREGH_TEST_APP_UPDATE_KEY_1"
 	secret, found := os.LookupEnv(envVar3)
 	if !found || secret == "" {
 		log.Fatalf("Failed to find %q value\n", envVar3)
