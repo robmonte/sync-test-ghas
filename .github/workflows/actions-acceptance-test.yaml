@@ -1,10 +1,20 @@
-name: GH-Test-Acceptance
+# This tests both Repository Actions and Organization Actions secrets.
+
+name: Actions-Test-Acceptance
+
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        default: ""
+        type: string
   
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
@@ -16,7 +26,7 @@ jobs:
       - name: Build gh validator
         run: go build ./main.go
 
-      - name: Run gh validator secrets checks
+      - name: Run gh validator actions secrets checks
         run: ./main
         env:
           STOREGH_TEST_TYPE: ${{ secrets.STOREGH_TEST_TYPE }}
