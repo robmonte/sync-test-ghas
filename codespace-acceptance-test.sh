@@ -26,7 +26,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_2${STOREGH_TEST_UUID}"
@@ -35,7 +35,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_3${STOREGH_TEST_UUID}"
@@ -44,7 +44,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_4${STOREGH_TEST_UUID}"
@@ -53,7 +53,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_5${STOREGH_TEST_UUID}"
@@ -62,7 +62,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 fi
 
@@ -76,7 +76,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 fi
 
@@ -99,7 +99,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 fi
 
@@ -113,7 +113,7 @@ then
 		echo "received \"${var}\" value but did not match expected value"
 		exit 1
 	else
-		echo "the value of \"${var}\" matched the expected value!"
+		echo "the value of \"${var}\" matched the expected value"
 	fi
 fi
 
