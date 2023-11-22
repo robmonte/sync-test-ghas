@@ -1,10 +1,13 @@
 #!/bin/bash
 
+RESULTS_FILENAME="codespace-results.txt"
+
 echo "pulling latest repository changes"
 git pull
 if [[ $? != 0 ]]
 then
 	echo "failed to pull latest changes from repository"
+	echo "FAIL" > $RESULTS_FILENAME
 	exit 1
 fi
 sleep 1
@@ -14,6 +17,7 @@ sleep 1
 if [[ -z "$STOREGH_TEST_TYPE" ]]
 then
 	echo "missing required \"STOREGH_TEST_TYPE\" field to determine test type"
+	echo "FAIL" > $RESULTS_FILENAME
 	exit 1
 fi
 echo "running \"$STOREGH_TEST_TYPE\" test type"
@@ -26,6 +30,7 @@ then
 	if [[ "${!var}" != "I am secret one!" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -35,6 +40,7 @@ then
 	if [[ "${!var}" != "I am secret two!" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -44,6 +50,7 @@ then
 	if [[ "${!var}" != "1234" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -53,6 +60,7 @@ then
 	if [[ "${!var}" != "{\"0\":\"my\",\"1\":\"map\",\"2\":\"value\"}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -62,6 +70,7 @@ then
 	if [[ "${!var}" != "{\"number\":1,\"true\":false}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -76,6 +85,7 @@ then
 	if [[ "${!var}" != "12345" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -90,6 +100,7 @@ then
 	if [[ "${!var}" != "value-1-updated" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value!"
@@ -99,6 +110,7 @@ then
 	if [[ "${!var}" != "{\"0\":\"value-2-updated\"}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -113,6 +125,7 @@ then
 	if [[ "${!var}" != "value-1-updated" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
+		echo "FAIL" > $RESULTS_FILENAME
 		exit 1
 	else
 		echo "the value of \"${var}\" matched the expected value"
@@ -123,3 +136,4 @@ fi
 
 echo ""
 echo "Success!"
+echo "SUCCESS" > $RESULTS_FILENAME
