@@ -16,6 +16,8 @@ fi
 
 echo "running \"$STOREGH_TEST_TYPE\" test type"
 
+
+
 if [[ "$STOREGH_TEST_TYPE" == "LOAD_TEST_TOKEN" ]]
 then
 	var="STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________${STOREGH_TEST_UUID}"
@@ -64,6 +66,8 @@ then
 	fi
 fi
 
+
+
 if [[ "$STOREGH_TEST_TYPE" == "LOAD_TEST_APP" ]]
 then
 	var="STOREGH_TEST_APP_LOAD_KEY_1${STOREGH_TEST_UUID}"
@@ -75,6 +79,8 @@ then
 		echo "the value of \"${var}\" matched the expected value!"
 	fi
 fi
+
+
 
 if [[ "$STOREGH_TEST_TYPE" == "UPDATE_TEST_TOKEN" ]]
 then
@@ -97,6 +103,8 @@ then
 	fi
 fi
 
+
+
 if [[ "$STOREGH_TEST_TYPE" == "UPDATE_TEST_APP" ]]
 then
 	var="STOREGH_TEST_APP_UPDATE_KEY_1${STOREGH_TEST_UUID}"
@@ -108,3 +116,7 @@ then
 		echo "the value of \"${var}\" matched the expected value!"
 	fi
 fi
+
+
+
+echo "Success!"
