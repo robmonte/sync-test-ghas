@@ -7,6 +7,7 @@ then
 	echo "failed to pull latest changes from repository"
 	exit 1
 fi
+sleep 1
 
 
 
