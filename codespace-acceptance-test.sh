@@ -8,12 +8,13 @@ then
 	exit 1
 fi
 
+
+
 if [[ -z "$STOREGH_TEST_TYPE" ]]
 then
 	echo "missing required \"STOREGH_TEST_TYPE\" field to determine test type"
 	exit 1
 fi
-
 echo "running \"$STOREGH_TEST_TYPE\" test type"
 
 

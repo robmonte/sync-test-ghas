@@ -34,6 +34,7 @@ func main() {
 	log.Println("Success!")
 }
 
+// Token authenticated Load checks
 func loadTypeTokenTestCheck() {
 	// Token Load Test 1
 	envVar1 := "STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________"
@@ -106,6 +107,7 @@ func loadTypeTokenTestCheck() {
 	}
 }
 
+// App authenticated Load checks
 func loadTypeAppTestCheck() {
 	// App Load Tets 1
 	envVar5 := "STOREGH_TEST_APP_LOAD_KEY_1"
@@ -120,6 +122,7 @@ func loadTypeAppTestCheck() {
 	}
 }
 
+// Token authenticated Update checks
 func updateTypeTokenTestCheck() {
 	// Token Update Test 1
 	envVar1 := "STOREGH_TEST_TOKEN_UPDATE_KEY_1"
@@ -146,6 +149,7 @@ func updateTypeTokenTestCheck() {
 	}
 }
 
+// App authenticated Update checks
 func updateTypeAppTestCheck() {
 	// App Update Test 1
 	envVar3 := "STOREGH_TEST_APP_UPDATE_KEY_1"
