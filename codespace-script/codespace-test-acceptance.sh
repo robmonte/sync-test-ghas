@@ -14,6 +14,12 @@ sleep 1
 
 
 
+echo ""
+echo ""
+echo "Beginning test case checks:
+
+
+
 if [[ -z "$STOREGH_TEST_TYPE" ]]
 then
 	echo "missing required \"STOREGH_TEST_TYPE\" field to determine test type"
@@ -136,9 +142,12 @@ fi
 
 echo "Success!"
 echo -n "SUCCESS" > $RESULTS_FILENAME
+echo ""
+echo ""
 sleep 2
 
 
 
+git add codespace-results.txt
 git commit --allow-empty -m "update codespace-results.txt with test status"
 git push
