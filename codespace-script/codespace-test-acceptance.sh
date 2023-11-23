@@ -2,16 +2,6 @@
 
 RESULTS_FILENAME="codespace-results.txt"
 
-echo "pulling latest repository changes"
-git pull
-if [[ $? != 0 ]]
-then
-	echo "failed to pull latest changes from repository"
-	echo -n "FAIL" > $RESULTS_FILENAME
-	exit 1
-fi
-sleep 1
-
 
 
 echo ""
