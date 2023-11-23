@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "this should print out!"
-
 RESULTS_FILENAME="codespace-results.txt"
 
 echo "pulling latest repository changes"
@@ -136,9 +134,10 @@ fi
 
 
 
-echo ""
 echo "Success!"
 echo -n "SUCCESS" > $RESULTS_FILENAME
+
+
 
 git commit --allow-empty -m "update codespace-results.txt with test status"
 git push
