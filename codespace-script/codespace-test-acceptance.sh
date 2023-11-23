@@ -16,7 +16,7 @@ sleep 1
 
 echo ""
 echo ""
-echo "Beginning test case checks:
+echo "Beginning test case checks:"
 
 
 
@@ -148,6 +148,6 @@ sleep 2
 
 
 
-git add codespace-results.txt
+git add "codespace-results.txt"
 git commit --allow-empty -m "update codespace-results.txt with test status"
 git push
