@@ -136,6 +136,7 @@ fi
 
 echo "Success!"
 echo -n "SUCCESS" > $RESULTS_FILENAME
+sleep 2
 
 
 
