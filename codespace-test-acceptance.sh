@@ -137,3 +137,6 @@ fi
 echo ""
 echo "Success!"
 echo -n "SUCCESS" > $RESULTS_FILENAME
+
+git commit -m "update codespace-results.txt with test status"
+git push
