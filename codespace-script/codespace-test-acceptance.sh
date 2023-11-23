@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "this should print out!"
+
 RESULTS_FILENAME="codespace-results.txt"
 
 echo "pulling latest repository changes"
