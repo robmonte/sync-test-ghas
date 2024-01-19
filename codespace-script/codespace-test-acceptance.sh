@@ -20,9 +20,9 @@ echo "running \"$STOREGH_TEST_TYPE\" test type"
 
 
 
-if [[ "$STOREGH_TEST_TYPE" == "LOAD_TEST_TOKEN" ]]
+if [[ "$STOREGH_TEST_TYPE" == "WRITE_TEST_TOKEN" ]]
 then
-	var="STOREGH_TEST_TOKEN_LOAD_KEY_1_BAD_SYMBOLS________${STOREGH_TEST_UUID}"
+	var="STOREGH_TEST_TOKEN_WRITE_KEY_1_BAD_SYMBOLS________${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "I am secret one!" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
@@ -32,7 +32,7 @@ then
 		echo "the value of \"${var}\" matched the expected value"
 	fi
 
-	var="STOREGH_TEST_TOKEN_LOAD_KEY_2${STOREGH_TEST_UUID}"
+	var="STOREGH_TEST_TOKEN_WRITE_KEY_2${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "I am secret two!" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
@@ -42,7 +42,7 @@ then
 		echo "the value of \"${var}\" matched the expected value"
 	fi
 
-	var="STOREGH_TEST_TOKEN_LOAD_KEY_3${STOREGH_TEST_UUID}"
+	var="STOREGH_TEST_TOKEN_WRITE_KEY_3${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "1234" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
@@ -52,7 +52,7 @@ then
 		echo "the value of \"${var}\" matched the expected value"
 	fi
 
-	var="STOREGH_TEST_TOKEN_LOAD_KEY_4${STOREGH_TEST_UUID}"
+	var="STOREGH_TEST_TOKEN_WRITE_KEY_4${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "{\"0\":\"my\",\"1\":\"map\",\"2\":\"value\"}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
@@ -62,7 +62,7 @@ then
 		echo "the value of \"${var}\" matched the expected value"
 	fi
 
-	var="STOREGH_TEST_TOKEN_LOAD_KEY_5${STOREGH_TEST_UUID}"
+	var="STOREGH_TEST_TOKEN_WRITE_KEY_5${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "{\"number\":1,\"true\":false}" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
@@ -75,9 +75,9 @@ fi
 
 
 
-if [[ "$STOREGH_TEST_TYPE" == "LOAD_TEST_APP" ]]
+if [[ "$STOREGH_TEST_TYPE" == "WRITE_TEST_APP" ]]
 then
-	var="STOREGH_TEST_APP_LOAD_KEY_1${STOREGH_TEST_UUID}"
+	var="STOREGH_TEST_APP_WRITE_KEY_1${STOREGH_TEST_UUID}"
 	if [[ "${!var}" != "12345" ]]
 	then
 		echo "received \"${var}\" value but did not match expected value"
