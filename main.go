@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 		log.Fatalf("missing required \"STOREGH_TEST_TYPE\" field to determine test type")
 	}
 
-	log.Printf("running %q test type\n", testType)
+	log.Printf("running %q test type\n", strings.ToLower(testType))
 
 	switch testType {
 	case "WRITE_TEST_TOKEN":
